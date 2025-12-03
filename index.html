@@ -1,56 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="icon" type="image/png" href="dinoicon.png">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Galaxia</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="icon.png">
 </head>
 <body>
-    <div class="gen-container">
-        <div class="container">
-            <form onsubmit="return verify(event)">
-                <p><h2>Ingrese la contraseña</h2></p>
-                <input type="password" id="input" placeholder="Contraseña" required>
-                <button type="button" id="ver">Ver</button><br>
-                <p id="alert"></p>
-                <button type="submit" id="submit">Continuar</button>
-            </form>
-        </div>
-    </div>
+<canvas id="c"></canvas>
 
+<!-- Reproductor personalizado -->
+<!--
+<div class="player">
+  <button id="play">▶️</button>
+  <div class="progress" id="progress"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="time" id="time">0:00 / 0:00</div>
+</div>
 
-    <script>
-        const verbtn = document.getElementById('ver')
-        const input = document.getElementById('input')
-        const alerta = document.getElementById('alert')
-        const clave = 'Rawr'
-        const version = '1.0'
-
-        console.log(`Update: ${version}`)
-
-        verbtn.addEventListener("click", () => {
-            if (input.type === 'password'){
-                input.type = 'text'
-            }else{
-                input.type = 'password'
-            }
-        })
-
-        function verify(event){
-            if(input.value === clave){
-                alerta.innerHTML = `*cargando siguiente pagina`
-                alerta.style.color = 'rgb(120, 255, 120)'
-                window.location.href = 'http://serpawer.servegame.com'
-                event.preventDefault()
-            }else{
-                alerta.innerHTML = `*contraseña incorrecta`
-                alerta.style.color = 'rgb(255, 117, 117)'
-                event.preventDefault()
-            }
-        }
-    </script>
-
+<audio id="audio" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+-->
+<script src="script.js"></script>
+<script src="play.js"></script>
 </body>
 </html>
