@@ -1,27 +1,47 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<title>Galaxia</title>
-<link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/png" href="icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicie</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<canvas id="c"></canvas>
+    <div class="gen-container">
+        <div class="container">
+            <form onsubmit="return verify(event)">
+                <p><h2>Ingrese la contraseña</h2></p>
+                <input type="password" id="input" placeholder="Contraseña" required>
+                <button type="button" id="ver">Ver</button><br>
+                <p id="alert"></p>
+                <button type="submit" id="submit">Continuar</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const verbtn = document.getElementById('ver')
+        const input = document.getElementById('input')
+        const alerta = document.getElementById('alert')
+        const clave = 'Rawr'
 
-<!-- Reproductor personalizado -->
-<div class="player">
-  <button id="play">▶️</button>
-  <div class="progress" id="progress"><div class="progress-bar" id="progress-bar"></div></div>
-  <div class="time" id="time">0:00 / 0:00</div>
-</div>
+        verbtn.addEventListener("click", () => {
+            if (input.type === 'password'){
+                input.type = 'text'
+            }else{
+                input.type = 'password'
+            }
+        })
 
-<audio id="audio" loop>
-  <source src="sweater-weather.mp3" type="audio/mpeg">
-</audio>
-
-<script src="script.js"></script>
-<script src="play.js"></script>
+        function verify(event){
+            if(input.value === clave){
+                alerta.innerHTML = `Cargando siguiente pagina`
+                window.location.href = 'http://serpawer.servegame.com'
+                event.preventDefault()
+            }else{
+                alerta.innerHTML = `*contraseña incorrecta`
+                event.preventDefault()
+            }
+        }
+    </script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 // ================= Reproductor =================
-const audio=document.getElementById('audio'),playBtn=document.getElementById('play'),progress=document.getElementById('progress'),progressBar=document.getElementById('progress-bar'),timeDisplay=document.getElementById('time');let isPlaying=false;
+/*const audio=document.getElementById('audio'),playBtn=document.getElementById('play'),progress=document.getElementById('progress'),progressBar=document.getElementById('progress-bar'),timeDisplay=document.getElementById('time');let isPlaying=false;
 playBtn.addEventListener('click',async()=>{if(isPlaying){audio.pause();playBtn.textContent='▶️';}else{await audio.play();playBtn.textContent='⏸️';}isPlaying=!isPlaying;});
 function formatTime(sec){if(!isFinite(sec))return'0:00';const m=Math.floor(sec/60);const s=Math.floor(sec%60).toString().padStart(2,'0');return m+':'+s;}
 audio.addEventListener('timeupdate',()=>{const percent=(audio.currentTime/audio.duration)*100;progressBar.style.width=(isFinite(percent)?percent:0)+'%';timeDisplay.textContent=formatTime(audio.currentTime)+' / '+formatTime(audio.duration);});
 progress.addEventListener('click',(e)=>{const rect=progress.getBoundingClientRect();const x=e.clientX-rect.left;const percent=x/rect.width;if(isFinite(audio.duration))audio.currentTime=percent*audio.duration;});
-
+*/
 // ================= Escena =================
 const canvas=document.getElementById('c');
 const renderer=new THREE.WebGLRenderer({canvas,antialias:true});
@@ -103,14 +103,14 @@ scene.add(ring1);scene.add(ring2);
 // Palabras alrededor
 const WORDS=[];
 const baseWords=[
-  '💖 Mi amor','🌕 Mi luna','🌎 Mi mundo','✨ Brillas','❤️ Te amo','🌌 Universo',
-  '👑 Reina','🌠 Estrella','💫 Mi cielo','🔥 Siempre tú','🎶 Tu risa','🦋 Libertad',
+  '💖 Mi amor','💎 Mi princesa','🌎 Mi mundo','✨ Brillas','❤️ Te amo','🌌 Mi universo',
+  '👑 Mi reina','🌠 Estrella','💫 Mi cielo','🔥 Siempre tú','🎶 Tu risa','🦋 Libertad',
   '💎 Eres todo','🙏 Gracias','💕 Cariño','🌹 Amor eterno','🤗 Abrazos','🌸 Esperanza',
-  '🌈 Alegría','🌟 Contigo','🧸 Ternura','🎁 Mi razón','🌙 Mi destino','💌 Recuerdos',
+  '🌈 Alegría','🌟 Contigo','🧸 Ternura','💍 Mi futuro','🌙 Mi destino','🦖 Rawr',
   '🕊️ Mi paz','🪐 Mi universo','🌊 Mi calma','💡 Mi luz','🍒 Dulzura','🥰 Mi vida',
   '🎇 Felicidad','🌻 Alegría','🌺 Mi flor','💜 Eternidad','🌟 Sueños','✨ Magia',
   '🎵 Canción','🔥 Pasión','⭐ Mi estrella','🌴 Mi paraíso','🌄 Amanecer','🌃 Noche contigo',
-  '🎉 Mi fiesta','💫 Inspiración','🌷 Siempre juntos','🎀 Mi ternura','🍀 Mi fortuna','🪞 Mi reflejo'
+  '🥰 Mi bb','💫 Inspiración','🌷 Juntos por siempre','🎀 Mi ternura','🍀 Mi fortuna','🪞 Mi reflejo'
 ];
 for(let i=0;i<6;i++){WORDS.push(...baseWords);}
 function makeTextTexture(text,color){
